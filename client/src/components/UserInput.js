@@ -5,26 +5,28 @@ import Robot from './Robot';
 import css from '../styles/UserInput.module.css';
 
 export default function UserInput() {
-  const [userInput, setUserInput] = useState({ value: '', image: '' });
+  const [userInput, setUserInput] = useState('');
+
+  const [image, setImage] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setUserInput({ image: `https://robohash.org/${userInput}.png` });
+    setImage(`https://robohash.org/${userInput}.png`);
   };
 
   const handleChange = (event) => {
-    setUserInput({ value: event.target.value });
+    setUserInput(event.target.value);
   };
 
   return (
     <div className={css.container}>
       <div className={css.form}>
         <form onSubmit={handleSubmit}>
-          <input type='text' value={userInput.value} onChange={handleChange} />
+          <input type='text' value={userInput} onChange={handleChange} />
         </form>
         <button onClick={handleSubmit}>Submit</button>
       </div>
-      <Robot userInput={userInput} />
+      <Robot image={image} />
     </div>
   );
 }
