@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import Robot from './Robot';
 
+import css from '../styles/UserInput.module.css';
+
 export default function UserInput() {
   const [userInput, setUserInput] = useState({ value: '', image: '' });
 
@@ -11,14 +13,17 @@ export default function UserInput() {
   };
 
   const handleChange = (event) => {
-    setUserInput({ ...userInput, value: event.target.value });
+    setUserInput({ value: event.target.value });
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type='text' value={userInput.value} onChange={handleChange} />
-      </form>
+    <div className={css.container}>
+      <div className={css.form}>
+        <form onSubmit={handleSubmit}>
+          <input type='text' value={userInput.value} onChange={handleChange} />
+        </form>
+        <button onClick={handleSubmit}>Submit</button>
+      </div>
       <Robot userInput={userInput} />
     </div>
   );
