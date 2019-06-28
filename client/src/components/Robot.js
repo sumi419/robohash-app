@@ -1,11 +1,5 @@
 import React from 'react';
 
-import css from '../styles/Robot.module.css';
-
-export default function Robot(props) {
-  return (
-    <div className={css.container}>
-      <img src={props.image} />
-    </div>
-  );
+export default function Robot({ image }) {
+  return image && <img src={image} alt='robot' />;
 }
