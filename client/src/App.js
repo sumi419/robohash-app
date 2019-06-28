@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import css from './styles/app.module.css';
 
 export default function App() {
   return <>👩‍💻</>;
