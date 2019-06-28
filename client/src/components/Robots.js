@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Robot from './Robot';
 
-import css from '../styles/userInput.module.css';
+import css from '../styles/robots.module.css';
 
 export default function Robots() {
   const [userInput, set] = useState('');
