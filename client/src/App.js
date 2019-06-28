@@ -8,7 +8,10 @@ export default function App() {
   return (
     <>
       <div className={css.container}>
-        <UserInput />
+        <div>
+          <h1>Robots</h1>
+          <UserInput />
+        </div>
       </div>
     </>
   );
