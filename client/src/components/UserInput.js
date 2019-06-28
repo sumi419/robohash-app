@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Robot from './Robot';
+
 export default function UserInput() {
   const [userInput, setUserInput] = useState({ value: '', image: '' });
 
@@ -17,7 +19,7 @@ export default function UserInput() {
       <form onSubmit={handleSubmit}>
         <input type='text' value={userInput.value} onChange={handleChange} />
       </form>
-      <img src={userInput.image} />
+      <Robot userInput={userInput} />
     </div>
   );
 }
