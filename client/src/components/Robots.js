@@ -19,8 +19,18 @@ export default function Robots() {
   return (
     <div className={css.container}>
       <form className={css.form} onSubmit={handleSubmit}>
-        <input className={css.input} type='text' value={userInput} onChange={handleChange} />
-        <button type='submit'>Submit</button>
+        <div className={css.inputWrapper}>
+          <input
+            className={css.input}
+            type='text'
+            placeholder='Search for Robot 🤖'
+            value={userInput}
+            onChange={handleChange}
+          />
+        </div>
+        <button className={css.button} type='submit'>
+          Search
+        </button>
       </form>
       <Robot image={image} />
     </div>
