@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 import Robot from './Robot';
 
@@ -10,7 +11,9 @@ export default function Robots() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setImage(`https://robohash.org/${userInput}.png`);
+    axios
+      .get(`https://robohash.org/${userInput}.png`)
+      .then(() => setImage(`https://robohash.org/${userInput}.png`));
     set('');
   };
 
@@ -23,13 +26,13 @@ export default function Robots() {
           <input
             className={css.input}
             type='text'
-            placeholder='Search for Robot 🤖'
+            placeholder='Type in your name 🤖...'
             value={userInput}
             onChange={handleChange}
           />
         </div>
         <button className={css.button} type='submit'>
-          Search
+          Generate
         </button>
       </form>
       <Robot image={image} />
