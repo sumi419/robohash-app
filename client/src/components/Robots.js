@@ -36,6 +36,7 @@ export default function Robots() {
             placeholder='Type in your name 🤖...'
             value={userInput}
             onChange={handleChange}
+            required
           />
         </div>
         <button className={css.button} type='submit'>
