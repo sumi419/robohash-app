@@ -27,9 +27,7 @@ export default function Robots() {
     set('');
   };
 
-  const handleChange = e => {
-    set(e.target.value);
-  };
+  const handleChange = e => set(e.target.value);
 
   return (
     <div className={css.container}>
@@ -48,7 +46,7 @@ export default function Robots() {
           {button}
         </button>
       </form>
-      <h1>{name}</h1>
+      <h1 className={css.name}>{name}</h1>
       <Robot image={image} />
     </div>
   );
